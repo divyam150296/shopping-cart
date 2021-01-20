@@ -8,6 +8,9 @@ body,
     height:100vh;
     margin: 0;
 }
+a{
+    text-decoration: none;
+}
 .grid-container{
     display: grid;
     grid-template-areas: "header"
@@ -24,6 +27,9 @@ header{
     display: flex;
     align-items: center;
     padding: 0.5rem;
+}
+a{
+text-decoration: none;
 }
 a:hover{
     color: orange;
@@ -43,4 +49,62 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center ;
+}
+.content{
+    display:flex;
+    flex-wrap: wrap;
+}
+.main{
+    flex:3 60rem;    
+}
+.sidebar{
+    flex: 1 20rem; 
+}
+
+/*products*/
+.products{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.products li{
+    display: flex;
+    flex: 0 1 29rem;
+    height: 30rem;
+    padding: 1rem;
+    
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.product img{
+    max-width: 27rem;
+    max-height: 22rem;
+}
+.product-price div,
+.product-price button{
+    /* text-align: center; */
+    flex: 1;
+}
+.product-price div{
+    font-size: 2rem;
+}
+.button{
+    padding: 1rem;
+    border: 0.1rem white;
+    background-color: thistle;
+    cursor: pointer;
+}
+.button:hover{
+    border: 0.1rem black;
+}
+.button.primary{
+    background-color: gold;
 }
