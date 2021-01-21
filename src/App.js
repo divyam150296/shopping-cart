@@ -26,6 +26,6 @@ class App extends React.Component{
         </main>
         <footer>All rights reserved</footer>
          </div>;
+    }
+}
 export default App;
-//property
-///whats the change
