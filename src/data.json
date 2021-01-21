@@ -21,7 +21,7 @@
         "image":"images/image3.jpg",
         "description":"about dress3",
         "price":920,
-        "availableSize":["S","XL","XXL"]
+        "availableSize":["S","M","XL","XXL"]
       },
       {
         "_id":"dress4",
@@ -36,7 +36,7 @@
         "title":"Dress 5",
         "image":"images/image5.jpg",
         "description":"about dress5",
-        "price":800,
+        "price":900,
         "availableSize":["S","M","L"]
       },
       {
