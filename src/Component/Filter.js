@@ -12,7 +12,7 @@ export default class Filter extends Component {
                     <option value="highest">Highest</option>
                     </select></div>
                 <div className="filter-size">Size{" "}
-                <select onChange={this.props.filterProducts}>
+                <select value={this.props.size}  onChange={this.props.filterProducts}>
                     <option value="">ALL</option>
                     <option value="XS">XS</option>
                     <option value="S">S</option>
