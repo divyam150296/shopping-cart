@@ -182,3 +182,24 @@ list-style-type: none;
 .input{
   padding: 1rem;
 }
+
+/*Product Details on Modal*/
+.product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 70vh;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.product-detail img{
+    max-width: 90vh;
+    max-height:90vh ;
+}
+/* .product-description{
+    flex:1 1;
+    margin: 1rem;
+} */
+.close-modal{
+   display: flex;
+   align-items:flex-end;
+}
