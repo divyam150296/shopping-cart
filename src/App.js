@@ -9,14 +9,18 @@ class App extends React.Component{
         super();
         this.state={
             products:data.products,
-            cartItem:[],
+            cartItem:localStorage.getItem("cartItem")?JSON.parse(localStorage.getItem("cartItem")):[],
             size:"",
             sort:"" 
-        }
+        };
     }
+    create=(order)=>{
+        alert("you are checking with",+order.name);
+    };
     removeFromCart=(product)=>{
         const cartItem=this.state.cartItem;
         this.setState({cartItem:cartItem.filter((x)=>x._id!==product._id)})
+        localStorage.setItem("cartItem",JSON.stringify(cartItem.filter((x)=>x._id!==product._id)));
     }
     addToCart=(product)=>{
         const cartItem=this.state.cartItem.slice();
@@ -32,10 +36,11 @@ class App extends React.Component{
             cartItem.push({...product,count:1});
         }
         this.setState({cartItem})
+        localStorage.setItem("cartItem",JSON.stringify(cartItem));
     }; 
     sortProducts=(event)=>{
         const sort=event.target.value;
-        console.log(event.target.value);
+        console.log(event);
         this.setState((state)=>({
          sort:sort,
          products:state.products.slice()
@@ -52,7 +57,7 @@ class App extends React.Component{
         }));
     }
     filterProducts=(event)=>{
-        console.log(event.target.value);
+        console.log(event);
         if (event.target.value==="")
     {
               this.setState({size:"",products:data.products})
@@ -82,7 +87,13 @@ class App extends React.Component{
                 />
                 <Products products={this.state.products} 
                           addToCart={this.addToCart}/></div>
-                <div className="sidebar"><Cart cartItem={this.state.cartItem} removeFromCart={this.removeFromCart}/>  </div>
+
+                <div className="sidebar">
+                    <Cart 
+                cartItem={this.state.cartItem}
+                 removeFromCart={this.removeFromCart}
+                 create={this.create}/> 
+                 </div>
             </div>
         </main>
         <footer>All rights reserved</footer>

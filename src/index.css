@@ -171,3 +171,14 @@ footer{
 .total>button{
     flex:1;
 }
+.form-container{
+width: 100%;
+list-style-type: none;
+}
+.form-container li{
+ display: flex;
+ flex-direction:column;
+}
+.input{
+  padding: 1rem;
+}
