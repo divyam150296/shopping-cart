@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import formatCurrency from '../util.js';
 import Fade from 'react-reveal/Fade';
+import {connect} from "react-redux";
+import {removeFromCart} from '../action/productAction';
 
-export default class Cart extends Component {
+class Cart extends Component {
     constructor(){
     super();
     this.state={showCheckout:false,name:"",address:"",email:""
@@ -28,7 +30,7 @@ export default class Cart extends Component {
         return (
             <div>
                 {cartItem.length===0?(<div className="cart cart-header">Cart is Empty</div>)
-                :(<div className="cart cart-header">You have <span className="span">{cartItem.length}</span> type of item in the cart</div>)}
+                :(<div className="cart cart-header">You have {cartItem.length} type of item in the cart</div>)}
                 <div>
                     <div className="cart">
                     <Fade left cascade>
@@ -95,3 +97,8 @@ export default class Cart extends Component {
         );
     }
 }
+const mapStateToProps=(state)=>{
+    console.log(state);
+    return{cartItem:state.cart.cartItems}
+};
+export default connect(mapStateToProps,{removeFromCart})(Cart)

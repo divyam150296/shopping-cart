@@ -12,7 +12,7 @@ class Filter extends Component {
                 <div className="filter-sort">Order{" "}
                 <select onChange={(e)=>this.props.sortProducts(this.props.filtered,e.target.value)}>
                     <option>Latest</option>
-                    <option value="lowest">Lowest</option>
+                    <option value="lowest">Lowest</option>Z
                     <option value="highest">Highest</option>
                     </select></div>
                 <div className="filter-size">Size{" "}

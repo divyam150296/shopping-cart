@@ -7,4 +7,4 @@ switch(action.type){
     case FETCH_PRODUCTS:return{items:action.payload,filteredItems:action.payload};
     default:return state;
 }
-}
+}   
